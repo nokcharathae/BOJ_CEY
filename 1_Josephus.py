@@ -4,10 +4,19 @@
 # 예를 들어 (7, 3)-요세푸스 순열은 <3, 6, 2, 7, 5, 1, 4>이다.
 
 
-n, k = input('숫자 두 개를 입력하세요: ').split()    # 입력받은 값을 공백을 기준으로 분리
-n = int(n)    # 변수를 정수로 변환한 뒤 다시 저장
-k = int(k)
+n, k = input().split()  # 입력받은 값을 공백을 기준으로 분리
+n,k = int(n), int(k)    # 변수를 정수로 변환한 뒤 다시 저장
+key = 0
+a=[] 
+b=[]
+for i in range(1,n+1):
+    a.append(i)
 
-print(n, k)
+for i in range(n):
+    key = (key + k-1)%(n-i)
+    b.append(a.pop(key))
 
-# 1 2 3 4 5 6 7
+print('<', end='')
+for i in range(n-1):
+    print('%d, '%b[i],end='')
+print('%d>'%b[n-1],end='')
