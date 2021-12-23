@@ -33,4 +33,3 @@ class mystack:
             return -1
         return self._data[self.size-1]
 
-        
