@@ -22,4 +22,3 @@ for i in range(num):
     else:
         print('NO')
         
-   
