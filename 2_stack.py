@@ -7,29 +7,33 @@
 # empty: 스택이 비어있으면 1, 아니면 0을 출력한다.
 # top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
 
-class mystack:
-    def __init__(self):
-        self._data=[]
+num = (int)(input())
+s_list = [input().split() for _ in range(num)]
+mystack = []
 
-    def empty(self):
-        if len(self._data)==0 :
-            return 0
+for i in range(num):
+    if s_list[i][0] == "push" :
+        mystack.append(s_list[i][1])
+    
+    elif s_list[i][0] == "pop" :
+        if len(mystack) == 0:
+            print(-1)
+        else: 
+            print(mystack.pop()) 
+    
+    elif s_list[i][0] == "size" :
+        print(len(mystack))
+
+    elif s_list[i][0] == "empty" :
+        if len(mystack) == 0:
+            print(1)
         else:
-            return 1
-
-    def push(self, x):
-        self._data.append(x)
+            print(0)
     
-    def pop(self, x):
-        if self.empty():
-            return -1
-        return self._data.pop()
+    elif s_list[i][0] == "top" :
+        if len(mystack) == 0:
+            print(-1)
+        else: 
+            print(mystack[-1])
 
-    def size(self):
-        return len(self._data)
-    
-    def top(self):
-        if self.empty():
-            return -1
-        return self._data[self.size-1]
 
