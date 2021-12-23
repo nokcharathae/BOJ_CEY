@@ -5,3 +5,16 @@
 
 # N이 주어졌을 때, 제일 마지막에 남게 되는 카드를 구하는 프로그램을 작성하시오.
 
+num = (int)(input())
+a=[]
+for i in range(num):
+    a.append(i+1)
+
+while len(a)>1:
+    a.pop(0)
+    a.append(a.pop(0))
+    print(a)
+
+# print(a[0])
+
+# 1 2 3 4 5 6 7 8 9 10
