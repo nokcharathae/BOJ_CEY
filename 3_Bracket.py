@@ -5,3 +5,21 @@
 # 예를 들어 “(())()”와 “((()))” 는 VPS 이지만 “(()(”, “(())()))” , 그리고 “(()” 는 모두 VPS 가 아닌 문자열이다. 
 # 여러분은 입력으로 주어진 괄호 문자열이 VPS 인지 아닌지를 판단해서 그 결과를 YES 와 NO 로 나타내어야 한다. 
 
+num = (int)(input())
+s_list = [input() for _ in range(num)]
+for i in range(num):
+    num_left = 0
+    num_right = 0
+    for word in s_list[i]:
+        if word == '(':
+            num_left = num_left+1
+        elif word == ')':
+            num_right = num_right+1
+        if num_left < num_right :
+            break
+    if num_left == num_right:
+        print('YES')
+    else:
+        print('NO')
+        
+   
